@@ -1,0 +1,10 @@
+*.a
+*.i
+*.s
+*.out
+*.dSYM/
+*.o
+**/obj
+**/bin
+*.d
+**/.gdb_history
