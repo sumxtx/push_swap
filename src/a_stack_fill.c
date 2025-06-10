@@ -2,26 +2,26 @@
 
 // For the sake of it, for now, let's supose we have a proper input
 
-int lorem(int *parsed_in)
+int_lst *stack_a_fill()
 {
   char splitted[6][3] = {"23", "2", "54", "45", "6", "60"};
 
-  int i;
   int   arglen;
+  int_lst *holder = NULL;
+  int_lst *stack_a = NULL;
 
-  i = 0;
   arglen = 6;
-  parsed_in = (int *)malloc(arglen);
-  if(!parsed_in)
-    exit(EXIT_FAILURE);
-  while(i < arglen)
+  while(arglen)
   {
-    parsed_in[i] = ft_atoi(splitted[i]);
-    i++;
-    //free(splitted[x]);
+    arglen--;
+    holder = int_lst_node(ft_atoi(splitted[arglen]));
+    if(!holder)
+      exit(EXIT_FAILURE); // TODO: Try make a wrapper, So all this if(!)exit routine doesnt condume two lines
+                          //free(splitted[x]);
+    int_lst_addfront(&stack_a, holder);
   }
   //free(splitted);
-  return arglen;
+  return stack_a;
 }
 
 // --[Checkpoint]--
@@ -31,17 +31,7 @@ int lorem(int *parsed_in)
 // check if this numbers are not already sorted
 // so now we could fill the stack a with the numbers
 
-/*
-void a_stack_fill()
+int lorem()
 {
-  int *parsed_in = {0};
-  int len = lorem(parsed_in);
-  
-  while(len)
-  {
-    create_node(parsed_in[i]);
-    pa(stack_a);
-  }
-  free(parsed_in);
+  stack_a_fill();
 }
-*/

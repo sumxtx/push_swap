@@ -22,20 +22,20 @@ int main(int ac, char **av)
 
   if (ac == 1) // only progr name
     exit(EXIT_FAILURE);
-  if (ac == 2) // maybe a string "12 23 45"
+  else if (ac == 2) // maybe a string "12 23 45"
   {
     splitted = ft_split(av[1],' ');
     if(!splitted)
       exit(EXIT_FAILURE);
-  }
-  if (splitted)
     ac = vector_len((const char**)splitted);
-  while(ac)
-  {
-    ac--;
-    printf("%d ", ft_atoi(splitted[ac]));
-    //Jump to a_stack_fill from here
   }
-  //a_stack_fill();
+  else
+    splitted = av;
+  //while(ac)
+  //{
+    //ac--;
+    // stack a <- ft_atoi(splitted[ac]);
+  //}
+  stack_a_fill();
   return(EXIT_SUCCESS);
 }
