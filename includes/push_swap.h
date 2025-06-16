@@ -7,6 +7,17 @@
 #include <stdlib.h>
 #include "libftall.h"
 
+// Parse av
+char **_split_av_(char **av);
+char **_dup_av_(int ac, char **av);
+char **parse_av(int ac, char **av);
+void _ftfree_(char **splitted, int size);
+
+// utils
+int vector_len(char **s);
+
+
+// nodes and list
 typedef struct s_dlstnode
 {
   void *content;
@@ -20,9 +31,14 @@ typedef struct int_node
   struct int_node *next;
 } int_lst;
 
+
+// list utils
 int_lst	*int_lst_node(int content);
 void	int_lst_addfront(int_lst **lst, int_lst *new);
+int_lst *a_stack_fill();
 
+
+// operations
 void sa();
 void sb();
 void ss();
@@ -39,6 +55,4 @@ void rrb();
 void rrr();
 
 
-int lorem();
-int_lst *a_stack_fill();
 #endif

@@ -5,5 +5,5 @@ all:
 		-I./Libft/includes \
 		-I./Libft/ft_printf/includes \
 		-I./Libft/get_next_line/includes \
-		./src/push_swap.c ./src/a_stack_fill.c ./src/lists.c\
+		./src/push_swap.c ./src/parse_av.c ./src/utils.c\
 		Libft/libftall.a
