@@ -44,7 +44,7 @@ char **_dup_av_(int ac, char **av)
   {
     splitted[i] = ft_strdup(av[i + 1]);
     if(!splitted[i])
-      _ftfree_(splitted, ac);
+      _ftfreewexit_(splitted, ac, 1);
     i++;
   }
   return splitted;

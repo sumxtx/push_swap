@@ -2,6 +2,12 @@
 
 // For the sake of it, for now, let's supose we have a proper input
 
+void sort_stack(int *int_arr, int ac)
+{
+  stack_a_fill();
+}
+
+
 int_lst *stack_a_fill()
 {
   char splitted[6][3] = {"23", "2", "54", "45", "6", "60"};

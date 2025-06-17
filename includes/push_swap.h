@@ -7,13 +7,20 @@
 #include <stdlib.h>
 #include "libftall.h"
 
-// Parse av
+/* Parse av */
 char **_split_av_(char **av);
 char **_dup_av_(int ac, char **av);
 char **parse_av(int ac, char **av);
-void _ftfree_(char **splitted, int size);
+void _ftfreewexit_(char **splitted, int size, int exit);
 
-// utils
+/* Validate input */
+int *convert_int(char **splitted, int len);
+int check_input(char **splitted, int *int_arr, int len);
+int	check_zero(char *av);
+int check_dups(int *int_arr, int len);
+int check_sorted(int *int_arr, int len);
+
+/* Other utils */
 int vector_len(char **s);
 
 

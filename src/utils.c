@@ -12,7 +12,7 @@ int vector_len(char **s)
   return len;
 }
 
-void _ftfree_(char **splitted, int size)
+void _ftfreewexit_(char **splitted, int size, int exit)
 {
   int i;
 
@@ -23,5 +23,6 @@ void _ftfree_(char **splitted, int size)
     i++;
   }
   free(splitted);
-  exit(EXIT_FAILURE);
+  if(exit == 1)
+    exit(EXIT_FAILURE);
 }
