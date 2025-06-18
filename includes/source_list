@@ -1,0 +1,8 @@
+SRC_FILES =\
+push_swap \
+parse_av \
+convert_int \
+lists \
+sort_stack \
+utils\
+

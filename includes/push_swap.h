@@ -24,7 +24,9 @@ int check_sorted(int *int_arr, int len);
 int vector_len(char **s);
 
 
-// nodes and list
+/* Nodes and Lists */
+
+  // ---> Double Linked List
 typedef struct s_dlstnode
 {
   void *content;
@@ -32,14 +34,23 @@ typedef struct s_dlstnode
   struct s_d_list_node *prev;
 } t_dlstnode;
 
-typedef struct int_node
+  // Utils
+
+  // ---> Single Linked List
+typedef struct s_lst_node
 {
   int content;
   struct int_node *next;
-} int_lst;
+} t_int_lst_node;
 
+typedef struct s_int_lst
+{
+  int count;
+  struct t_lst_node *first;
+  struct t_lst_node *last;
+} t_int_lst;
 
-// list utils
+  // utils
 int_lst	*int_lst_node(int content);
 void	int_lst_addfront(int_lst **lst, int_lst *new);
 int_lst *a_stack_fill();

@@ -1,44 +1,41 @@
 #include "push_swap.h"
-/*
-// For the sake of it, for now, let's supose we have a proper input
 
 void sort_stack(int *int_arr, int ac)
 {
-  stack_a_fill();
+  t_int_lst *stack_a;
+  t_int_lst *stack_b;
+  
+  stack_a = stack_a_fill(int_arr, ac);
+  if (ac < 5)
+    easy sort
+      return;
+  else
+    stack_b = alloc t_int_lst;
+    other sort;
+
+  return stack_a_sorted;
+
 }
 
-
-int_lst *stack_a_fill()
+t_int_lst *stack_a_fill(int *int_arr, int ac)
 {
-  char splitted[6][3] = {"23", "2", "54", "45", "6", "60"};
+  int i;
+  t_int_lst *stack_a;
+  t_int_lst_node *node;
 
-  int   arglen;
-  int_lst *holder = NULL;
-  int_lst *stack_a = NULL;
-
-  arglen = 6;
-  while(arglen)
+  stack_a = (t_int_lst *)ft_calloc(1, sizeof(t_int_lst));
+  if(!stack_a)
+    free
+      exit
+  i = 0;
+  while(i < ac)
   {
-    arglen--;
-    holder = int_lst_node(ft_atoi(splitted[arglen]));
-    if(!holder)
-      exit(EXIT_FAILURE); // TODO: Try make a wrapper, So all this if(!)exit routine doesnt condume two lines
-                          //free(splitted[x]);
-    int_lst_addfront(&stack_a, holder);
+    node = t_int_lst_newnode(int_arr[0]);
+    if(node)
+      t_int_lst_pushback() ;
+    else
+      free
+        exit
   }
-  //free(splitted);
   return stack_a;
 }
-
-// --[Checkpoint]--
-// at this point we should have
-// a sanitized input (with proper natural numbers)
-// an array of this numbers converted to integers 
-// check if this numbers are not already sorted
-// so now we could fill the stack a with the numbers
-
-int lorem()
-{
-  stack_a_fill();
-}
-*/
