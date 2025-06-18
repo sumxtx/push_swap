@@ -16,7 +16,7 @@ int *convert_int(char **splitted, int len)
   if(!(check_input(splitted,int_arr,len)))
   {
     free(int_arr);
-    _ft_free(splitted, len);
+    _ftfreewexit_(splitted, len, 1);
   }
   return int_arr;
 }
@@ -63,8 +63,9 @@ int check_dups(int *int_arr, int len)
 
   i = 0;
   j = 0;
-  while(i < len -1)
+  while(i < len)
   {
+    j = i + 1;
     while(j < len)
     {
       if(int_arr[i] == int_arr[j])
@@ -80,15 +81,18 @@ int check_sorted(int *int_arr, int len)
 {
   int i;
   int j;
+
+  i = 0;
+  j = 0;
   while(i < len -1)
   {
     while(j < len)
     {
       if(int_arr[j] < int_arr[i])
         return 0;
-      i++;
+      j++;
     }
-    j++;
+    i++;
   }
   return 1;
 }

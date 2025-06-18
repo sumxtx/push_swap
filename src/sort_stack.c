@@ -1,5 +1,5 @@
 #include "push_swap.h"
-
+/*
 // For the sake of it, for now, let's supose we have a proper input
 
 void sort_stack(int *int_arr, int ac)
@@ -41,3 +41,4 @@ int lorem()
 {
   stack_a_fill();
 }
+*/

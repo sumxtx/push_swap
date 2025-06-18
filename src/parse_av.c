@@ -36,7 +36,7 @@ char **_dup_av_(int ac, char **av)
   char **splitted;
 
   i = 0;
-  splitted = (char **)malloc(ac * sizeof(char *));
+  splitted = (char **)ft_calloc(ac, sizeof(char *));
   if(!splitted)
     exit(EXIT_FAILURE);
   ac--;

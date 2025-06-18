@@ -11,7 +11,7 @@
 char **_split_av_(char **av);
 char **_dup_av_(int ac, char **av);
 char **parse_av(int ac, char **av);
-void _ftfreewexit_(char **splitted, int size, int exit);
+void _ftfreewexit_(char **splitted, int size, int doexit);
 
 /* Validate input */
 int *convert_int(char **splitted, int len);
