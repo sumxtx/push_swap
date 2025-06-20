@@ -5,16 +5,31 @@ void sort_stack(int *int_arr, int ac)
   t_int_lst *stack_a;
   t_int_lst *stack_b;
   
+  stack_b = stack_b_init(int_arr);
   stack_a = stack_a_fill(int_arr, ac);
-  if (ac < 5)
+  /*
+  if (ac == 3)
     easy sort
       return;
   else
     stack_b = alloc t_int_lst;
     other sort;
+    */
+  pb(stack_b, stack_a);
+  pb(stack_b, stack_a);
+  
+}
 
-  return stack_a_sorted;
+t_int_lst *stack_b_init(int *int_arr)
+{
+  t_int_lst *stack_b;
+  
+  stack_b = (t_int_lst *)ft_calloc(1, sizeof(t_int_lst));
+  if(!stack_b)
+    _ftintfreewexit_(int_arr, 1);
+  stack_b->counter = 0;
 
+  return (stack_b);
 }
 
 t_int_lst *stack_a_fill(int *int_arr, int ac)
@@ -25,17 +40,18 @@ t_int_lst *stack_a_fill(int *int_arr, int ac)
 
   stack_a = (t_int_lst *)ft_calloc(1, sizeof(t_int_lst));
   if(!stack_a)
-    free
-      exit
+    _ftintfreewexit_(int_arr, 1);
   i = 0;
   while(i < ac)
   {
-    node = t_int_lst_newnode(int_arr[0]);
-    if(node)
-      t_int_lst_pushback() ;
-    else
-      free
-        exit
+    node = t_int_lst_newnode(int_arr[i]);
+    /*
+    if(!node)
+      _ftlstfreewexit_(stack_a, stack_b, int_arr, 1);
+    */
+    t_int_lst_pushback(stack_a, node);
+    i++;
   }
+  _ftintfreewexit_(int_arr, 0);
   return stack_a;
 }

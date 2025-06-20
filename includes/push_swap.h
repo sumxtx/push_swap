@@ -11,7 +11,6 @@
 char **_split_av_(char **av);
 char **_dup_av_(int ac, char **av);
 char **parse_av(int ac, char **av);
-void _ftfreewexit_(char **splitted, int size, int doexit);
 
 /* Validate input */
 int *convert_int(char **splitted, int len);
@@ -22,6 +21,8 @@ int check_sorted(int *int_arr, int len);
 
 /* Other utils */
 int vector_len(char **s);
+void _ftfreewexit_(char **splitted, int size, int doexit);
+void _ftintfreewexit_(int *arr, int doexit);
 
 
 /* Nodes and Lists */
@@ -40,29 +41,34 @@ typedef struct s_dlstnode
 typedef struct s_lst_node
 {
   int content;
-  struct int_node *next;
+  struct s_lst_node *next;
 } t_int_lst_node;
 
 typedef struct s_int_lst
 {
-  int count;
-  struct t_lst_node *first;
-  struct t_lst_node *last;
+  int counter;
+  t_int_lst_node *first;
+  t_int_lst_node *last;
 } t_int_lst;
 
   // utils
-int_lst	*int_lst_node(int content);
-void	int_lst_addfront(int_lst **lst, int_lst *new);
-int_lst *a_stack_fill();
+t_int_lst_node	*t_int_lst_newnode(int content);
+void	t_int_lst_addfront(t_int_lst **lst, t_int_lst_node *new);
+void	t_int_lst_pushback(t_int_lst *lst, t_int_lst_node *new);
+void _ftlstfreewexit_(int *arr, int doexit);
 
-
+void sort_stack(int *int_arr, int ac);
+t_int_lst *stack_a_fill(int *int_arr, int ac);
+t_int_lst *stack_b_init(int *int_arr);
+void sort_stack(int *int_arr, int ac);
 // operations
+void pa();
+void pb(t_int_lst *stack_b, t_int_lst *stack_a);
+
 void sa();
 void sb();
 void ss();
 
-void pa();
-void pb();
 
 void ra();
 void rb();

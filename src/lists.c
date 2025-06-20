@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-t_int_lst_node *t_lst_newnode(int content)
+t_int_lst_node  *t_int_lst_newnode(int content)
 {
 	t_int_lst_node *node;
 
@@ -13,11 +13,25 @@ t_int_lst_node *t_lst_newnode(int content)
 }
 
 
-void	t_int_lst_pushback(t_int_lst **lst, t_int_lst_node *new)
+void	t_int_lst_pushback(t_int_lst *lst, t_int_lst_node *new)
 {
-	if (!lst)
-	  new->next = NULL;
+	if (!lst->last)
+  {
+    lst->first = new;
+    lst->last = new;
+    lst->counter = 1;
+  }
   else
-    new->next = *lst;
-	*lst = new;
+  {
+    lst->last->next = new;
+    lst->last = new;
+    lst->counter++;
+  }
+}
+
+void _ftlstfreewexit_(int *arr, int doexit)
+{
+  free(arr);
+  if(doexit == 1)
+    exit(EXIT_FAILURE);
 }

@@ -80,18 +80,12 @@ int check_dups(int *int_arr, int len)
 int check_sorted(int *int_arr, int len)
 {
   int i;
-  int j;
 
   i = 0;
-  j = 0;
-  while(i < len -1)
+  while(i < len - 1)
   {
-    while(j < len)
-    {
-      if(int_arr[j] < int_arr[i])
-        return 0;
-      j++;
-    }
+    if(int_arr[i + 1] < int_arr[i])
+      return 0;
     i++;
   }
   return 1;
