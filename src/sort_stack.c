@@ -15,8 +15,16 @@ void sort_stack(int *int_arr, int ac)
     stack_b = alloc t_int_lst;
     other sort;
     */
+  stack_display_columns(stack_a, stack_b);
   pb(stack_b, stack_a);
+
+  stack_display_columns(stack_a, stack_b);
   pb(stack_b, stack_a);
+
+  stack_display_columns(stack_a, stack_b);
+  pb(stack_b, stack_a);
+
+  stack_display_columns(stack_a, stack_b);
   
 }
 

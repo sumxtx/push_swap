@@ -35,16 +35,27 @@ RM = rm -rf
 # Include Source File list
 -include $(INC_DIR)source_list
 
-OBJS := $(foreach file,$(SRC_FILES),$(addsuffix .o,$(file)))
-DEPS := $(foreach file,$(SRC_FILES),$(addsuffix .d,$(file)))
+OBJS := $(foreach file,$(SRC_FILES),$(addprefix $(OBJ_DIR), $(addsuffix .o,$(file))))
+DEPS := $(foreach file,$(SRC_FILES),$(addprefix $(OBJ_DIR), $(addsuffix .d,$(file))))
 SRCS := $(foreach file,$(SRC_FILES),$(addprefix $(SRC_DIR), $(addsuffix .c,$(file))))
 
 # Debug flags
 ifdef DEBUG
 	CFLAGS += $(DEBUG)
 endif
-ifdef LEAKS
-	endif
+#ifdef LEAKS
+#	endif
 
-all:
-		$(CC) $(CFLAGS) $(INCLUDES) $(SRCS) $(LIB_DIR)$(LIB)
+all: $(NAME)
+
+$(NAME): $(OBJ_DIR) $(OBJS) $(BIN_DIR)
+		$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIB_DIR)$(LIB) -o $(BIN_DIR)$(NAME)
+
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c Makefile $(INC_DIR)$(HEADER) $(INC_DIR)$(LIBFTHEADER)
+	$(CC) $(CFLAGS) $(DEP_FLAGS) $(INCLUDES) -c $< -o $@
+
+$(BIN_DIR):
+	@mkdir $(BIN_DIR)

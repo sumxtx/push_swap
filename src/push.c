@@ -1,12 +1,10 @@
 #include "push_swap.h"
 
-void push(t_int_lst *dst, t_int_lst *src)
+int push(t_int_lst *dst, t_int_lst *src)
 {
-  if(!src)
-    return ;
+  if(!src->first)
+    return -1;
   t_int_lst_node *holder;
-  /*if !src | ! dst */
-  /* badbins badabuns */
 
   if(!dst->first)
   {
@@ -23,12 +21,25 @@ void push(t_int_lst *dst, t_int_lst *src)
     dst->first = src->first;
     src->first = holder;
   }
+  return 1;
 }
 
 void pb(t_int_lst *stack_b, t_int_lst *stack_a)
 {
-  push(stack_b, stack_a);
-  stack_a->counter--;
-  stack_b->counter++;
-  write(1,"pb",2);
+  if(push(stack_b, stack_a) > 0)
+  {
+    stack_a->counter--;
+    stack_b->counter++;
+    write(1,"\npb\n",4);
+  }
+}
+
+void pa(t_int_lst *stack_b, t_int_lst *stack_a)
+{
+  if(push(stack_b, stack_a) > 0)
+  {
+    stack_a->counter--;
+    stack_b->counter++;
+    write(1,"\npa\n",4);
+  }
 }

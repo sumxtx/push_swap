@@ -51,18 +51,30 @@ typedef struct s_int_lst
   t_int_lst_node *last;
 } t_int_lst;
 
-  // utils
+
+
+// list utils
 t_int_lst_node	*t_int_lst_newnode(int content);
 void	t_int_lst_addfront(t_int_lst **lst, t_int_lst_node *new);
 void	t_int_lst_pushback(t_int_lst *lst, t_int_lst_node *new);
 void _ftlstfreewexit_(int *arr, int doexit);
 
+// print  utils
+void stack_display(t_int_lst *stack, char *st);
+void stack_display_columns(t_int_lst *stack_a, t_int_lst *stack_b);
+void print_stacks(t_int_lst *stack_a, t_int_lst *stack_b);
+
+// sort utils
 void sort_stack(int *int_arr, int ac);
 t_int_lst *stack_a_fill(int *int_arr, int ac);
 t_int_lst *stack_b_init(int *int_arr);
 void sort_stack(int *int_arr, int ac);
+
+
+
 // operations
-void pa();
+int push(t_int_lst *dst, t_int_lst *src);
+void pa(t_int_lst *stack_b, t_int_lst *stack_a);
 void pb(t_int_lst *stack_b, t_int_lst *stack_a);
 
 void sa();
