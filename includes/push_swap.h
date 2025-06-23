@@ -74,12 +74,13 @@ void sort_stack(int *int_arr, int ac);
 
 // operations
 int push(t_int_lst *dst, t_int_lst *src);
-void pa(t_int_lst *stack_b, t_int_lst *stack_a);
+void pa(t_int_lst *stack_a, t_int_lst *stack_b);
 void pb(t_int_lst *stack_b, t_int_lst *stack_a);
 
-void sa();
-void sb();
-void ss();
+int swap(t_int_lst *src);
+int sa(t_int_lst *stack_a);
+int sb(t_int_lst *stack_b);
+void ss(t_int_lst *stack_a, t_int_lst *stack_b);
 
 
 void ra();

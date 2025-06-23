@@ -16,16 +16,18 @@ void sort_stack(int *int_arr, int ac)
     other sort;
     */
   stack_display_columns(stack_a, stack_b);
-  pb(stack_b, stack_a);
-
+  sa(stack_a);
   stack_display_columns(stack_a, stack_b);
-  pb(stack_b, stack_a);
-
+  sa(stack_a);
   stack_display_columns(stack_a, stack_b);
-  pb(stack_b, stack_a);
-
+  pb(stack_b,stack_a);
   stack_display_columns(stack_a, stack_b);
-  
+  pb(stack_b,stack_a);
+  stack_display_columns(stack_a, stack_b);
+  sb(stack_b);
+  stack_display_columns(stack_a, stack_b);
+  sb(stack_b);
+  stack_display_columns(stack_a, stack_b);
 }
 
 t_int_lst *stack_b_init(int *int_arr)

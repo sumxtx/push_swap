@@ -2,10 +2,10 @@
 
 int push(t_int_lst *dst, t_int_lst *src)
 {
-  if(!src->first)
-    return -1;
   t_int_lst_node *holder;
 
+  if(!src->first)
+    return -1;
   if(!dst->first)
   {
     holder = src->first->next;
@@ -21,6 +21,8 @@ int push(t_int_lst *dst, t_int_lst *src)
     dst->first = src->first;
     src->first = holder;
   }
+  src->counter--;
+  dst->counter++;
   return 1;
 }
 
@@ -28,18 +30,14 @@ void pb(t_int_lst *stack_b, t_int_lst *stack_a)
 {
   if(push(stack_b, stack_a) > 0)
   {
-    stack_a->counter--;
-    stack_b->counter++;
     write(1,"\npb\n",4);
   }
 }
 
-void pa(t_int_lst *stack_b, t_int_lst *stack_a)
+void pa(t_int_lst *stack_a, t_int_lst *stack_b)
 {
-  if(push(stack_b, stack_a) > 0)
+  if(push(stack_a, stack_b) > 0)
   {
-    stack_a->counter--;
-    stack_b->counter++;
     write(1,"\npa\n",4);
   }
 }

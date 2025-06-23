@@ -49,7 +49,7 @@ endif
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJS) $(BIN_DIR)
-		$(CC) $(CFLAGS) $(INCLUDES) $(OBJS) $(LIB_DIR)$(LIB) -o $(BIN_DIR)$(NAME)
+		$(CC) $(CFLAGS) $(DEP_FLAGS) $(INCLUDES) $(OBJS) $(LIB_DIR)$(LIB) -o $(BIN_DIR)$(NAME)
 
 $(OBJ_DIR):
 	@mkdir $(OBJ_DIR)
