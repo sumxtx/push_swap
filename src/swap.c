@@ -37,7 +37,7 @@ int sb(t_int_lst *stack_b)
 
 void ss(t_int_lst *stack_a, t_int_lst *stack_b)
 {
-  if(sa(stack_a) && sb(stack_b))
+  if((swap(stack_a) > 0) && (swap(stack_b) > 0))
   {
     write(1,"\nss\n",4);
   }

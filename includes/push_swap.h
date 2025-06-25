@@ -82,14 +82,15 @@ int sa(t_int_lst *stack_a);
 int sb(t_int_lst *stack_b);
 void ss(t_int_lst *stack_a, t_int_lst *stack_b);
 
+int rotate(t_int_lst *src);
+int ra(t_int_lst  *stack_a);
+int rb(t_int_lst  *stack_b);
+int rr(t_int_lst  *stack_a, t_int_lst *stack_b);
 
-void ra();
-void rb();
-void rr();
-
-void rra();
-void rrb();
-void rrr();
+int rev_rotate(t_int_lst *src);
+int rra(t_int_lst  *stack_a);
+int rrb(t_int_lst  *stack_b);
+int rrr(t_int_lst  *stack_a, t_int_lst *stack_b);
 
 
 #endif

@@ -8,3 +8,4 @@ utils \
 push \
 print_stack_utils \
 swap \
+rotate \
