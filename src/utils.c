@@ -30,6 +30,7 @@ void _ftfreewexit_(char **splitted, int size, int doexit)
 void _ftintfreewexit_(int *arr, int doexit)
 {
   free(arr);
-  if(doexit == 1)
+if(doexit == 1)
     exit(EXIT_FAILURE);
 }
+

@@ -9,3 +9,5 @@ push \
 print_stack_utils \
 swap \
 rotate \
+reverse_rotate \
+sorting/st_bubble_sort \

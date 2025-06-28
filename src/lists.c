@@ -15,7 +15,7 @@ t_int_lst_node  *t_int_lst_newnode(int content)
 
 void	t_int_lst_pushback(t_int_lst *lst, t_int_lst_node *new)
 {
-	if (!lst->last)
+	if (lst->counter == 0)
   {
     lst->first = new;
     lst->last = new;
@@ -29,9 +29,28 @@ void	t_int_lst_pushback(t_int_lst *lst, t_int_lst_node *new)
   }
 }
 
-void _ftlstfreewexit_(int *arr, int doexit)
+void _ftlstfreewexit_(t_int_lst *sta, t_int_lst *stb, int *arr, int doexit)
 {
+  t_int_lst_node *holder;
+  t_int_lst_node *cur;
+
+  free(stb);
   free(arr);
+  if(sta->counter == 0)
+    free(sta);
+  else
+  {
+    cur = sta->first;
+    holder = cur->next;
+    while(sta->counter > 0)
+    {
+      free(cur);
+      cur = holder;
+      holder = cur->next;
+      sta->counter--;
+    }
+    free(sta);
+  }
   if(doexit == 1)
     exit(EXIT_FAILURE);
 }

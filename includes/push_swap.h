@@ -57,7 +57,7 @@ typedef struct s_int_lst
 t_int_lst_node	*t_int_lst_newnode(int content);
 void	t_int_lst_addfront(t_int_lst **lst, t_int_lst_node *new);
 void	t_int_lst_pushback(t_int_lst *lst, t_int_lst_node *new);
-void _ftlstfreewexit_(int *arr, int doexit);
+void _ftlstfreewexit_(t_int_lst *sta, t_int_lst *stb, int *arr, int doexit);
 
 // print  utils
 void stack_display(t_int_lst *stack, char *st);
@@ -66,7 +66,7 @@ void print_stacks(t_int_lst *stack_a, t_int_lst *stack_b);
 
 // sort utils
 void sort_stack(int *int_arr, int ac);
-t_int_lst *stack_a_fill(int *int_arr, int ac);
+t_int_lst *stack_a_fill(t_int_lst *stack_b, int *int_arr, int ac);
 t_int_lst *stack_b_init(int *int_arr);
 void sort_stack(int *int_arr, int ac);
 
@@ -92,5 +92,7 @@ int rra(t_int_lst  *stack_a);
 int rrb(t_int_lst  *stack_b);
 int rrr(t_int_lst  *stack_a, t_int_lst *stack_b);
 
+// Testing Sorting algorithms
+int st_bubble_sort(t_int_lst *stack_a);
 
 #endif
