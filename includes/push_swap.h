@@ -66,6 +66,7 @@ void print_stacks(t_int_lst *stack_a, t_int_lst *stack_b);
 
 // sort utils
 void sort_stack(int *int_arr, int ac);
+void sort_stack_manual_test(int *int_arr, int ac);
 t_int_lst *stack_a_fill(t_int_lst *stack_b, int *int_arr, int ac);
 t_int_lst *stack_b_init(int *int_arr);
 void sort_stack(int *int_arr, int ac);
@@ -94,5 +95,7 @@ int rrr(t_int_lst  *stack_a, t_int_lst *stack_b);
 
 // Testing Sorting algorithms
 int st_bubble_sort(t_int_lst *stack_a);
+int get_max_digits(t_int_lst *stack);
+void print_padded(int digits, int content);
 
 #endif

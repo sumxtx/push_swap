@@ -2,21 +2,6 @@
 
 void sort_stack(int *int_arr, int ac)
 {
-  t_int_lst *stack_a;
-  t_int_lst *stack_b;
-  
-  stack_b = stack_b_init(int_arr);
-  stack_a = stack_a_fill(stack_b, int_arr, ac);
-  /*
-  if (ac == 3)
-    easy sort
-      return;
-  else
-    stack_b = alloc t_int_lst;
-    other sort;
-    */
-  st_bubble_sort(stack_a);
-  stack_display_columns(stack_a, stack_b);
 }
 
 t_int_lst *stack_b_init(int *int_arr)

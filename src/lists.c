@@ -45,7 +45,7 @@ void _ftlstfreewexit_(t_int_lst *sta, t_int_lst *stb, int *arr, int doexit)
     while(sta->counter > 0)
     {
       free(cur);
-      cur = holder;
+      cur = holder; // Use after free?
       holder = cur->next;
       sta->counter--;
     }

@@ -3,11 +3,13 @@ push_swap \
 parse_av \
 convert_int \
 lists \
-sort_stack \
 utils \
 push \
 print_stack_utils \
 swap \
 rotate \
 reverse_rotate \
-sorting/st_bubble_sort \
+stack_utils \
+sort_stack_manual_test \
+#sort_stack \
+

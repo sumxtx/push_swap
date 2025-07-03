@@ -2,16 +2,13 @@
 
 int main(void)
 {
-  int *arr;
-  int max;
-  int min;
+  int arr[11]={0,8,1,3,2,7,4,5,6,9,10};
+  int max = 10;
+  int min = 0;
   int arr_len;
 
-  max = 20;
-  min = 0;
   int top = max - min + 1;
 
-  arr = random_gen_unsorted(min, max);
   int pos = 0;
   while(pos < top)
   {

@@ -22,7 +22,7 @@ int ra(t_int_lst  *stack_a)
   {
     if(rotate(stack_a) > 0)
     {
-      write(1,"ra\n",3);
+      write(1,"\nra\n",4);
       return (1);
     }
   }
@@ -30,7 +30,7 @@ int ra(t_int_lst  *stack_a)
   {
     if(swap(stack_a) > 0)
     {
-      write(1,"ra\n",3);
+      write(1,"\nra\n",4);
       return (1);
     }
   }
@@ -43,7 +43,7 @@ int rb(t_int_lst  *stack_b)
   {
     if(rotate(stack_b) > 0)
     {
-      write(1,"rb\n",3);
+      write(1,"\nrb\n",4);
       return (1);
     }
   }
@@ -51,7 +51,7 @@ int rb(t_int_lst  *stack_b)
   {
     if(swap(stack_b) > 0)
     {
-      write(1,"rb\n",3);
+      write(1,"\nrb\n",4);
       return (1);
     }
   }
@@ -64,7 +64,7 @@ int rr(t_int_lst  *stack_a, t_int_lst *stack_b)
   {
     if(rotate(stack_b) > 0 && rotate(stack_a) > 0)
     {
-      write(1,"rr\n",3);
+      write(1,"\nrr\n",4);
       return (1);
     }
   }
@@ -72,7 +72,7 @@ int rr(t_int_lst  *stack_a, t_int_lst *stack_b)
   {
     if(swap(stack_b) > 0 && swap(stack_a) > 0)
     {
-      write(1,"rr\n",3);
+      write(1,"\nrr\n",4);
       return (1);
     }
   }
